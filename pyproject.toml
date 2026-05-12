@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "spark-plan-doctor-py"
+version = "0.1.0"
+description = "AI-ready Spark execution plan diagnostics for PySpark, Delta tables, and assistant workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+  { name = "Ravi Kiran Pagidi" }
+]
+keywords = [
+  "spark",
+  "pyspark",
+  "databricks",
+  "delta-lake",
+  "query-plan",
+  "performance",
+  "data-engineering",
+  "ai-agents",
+  "genie",
+  "python"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Database",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: System :: Monitoring"
+]
+dependencies = []
+
+[project.optional-dependencies]
+spark = ["pyspark>=3.4"]
+dev = ["build>=1.2", "twine>=5.0"]
+
+[project.urls]
+Homepage = "https://github.com/ravikiranpagidi/spark-plan-doctor-py"
+Repository = "https://github.com/ravikiranpagidi/spark-plan-doctor-py"
+Issues = "https://github.com/ravikiranpagidi/spark-plan-doctor-py/issues"
+
+[project.scripts]
+spark-plan-doctor = "spark_plan_doctor.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spark_plan_doctor"]
